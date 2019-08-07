@@ -1,17 +1,19 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>2046</title>
-
+    <title>vue绑定属性和事件</title>
 </head>
 <body>
-      <div id="main">                
-        <h1 :title="title">{{msg}}</h1>  
-        <hr />      
-        <input type="button" value="爱你" @click="f1"/ >  
-      </div>
+    <div id="main">
+        <!--<h1 v-band:title="title">{{msg}}</h1>-->                  
+        <h1 :title="title">{{msg}}</h1>    <!--绑定属性的简单写法-->
+        <hr />       <!--分隔符-->
+        <!--<input type="button" value="点击" v-on:click="f1"/ >-->
+        <input type="button" value="点击" @click="f1"/ >    <!--绑定事件的简单写法-->   
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
         var vm = new Vue({
@@ -21,12 +23,14 @@
                 msg1: '爱你哟Ｉ Lᵒᵛᵉᵧₒᵤ❤',
             },
             methods: {
-                   f1: function () {
+                f1: function () {
 
-                    alert(this.msg1)    
+                    alert(this.msg1)       
+                }
 
             },
         })
-        </script>
+
+    </script>
 </body>
 </html>
