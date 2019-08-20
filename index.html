@@ -3,14 +3,19 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title>2046</title>
+    <title>vue绑定属性和事件</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="main">
         <!--<h1 v-band:title="title">{{msg}}</h1>-->                  
-        <h1>{{msg}}</h1>    <!--绑定属性的简单写法-->
+        <h1 v-cloak>{{msg}}</h1>    <!--绑定属性的简单写法-->
         <hr />       <!--分隔符-->
-        <!--<input type="button" value="爱的暴击" v-on:click="f1"/ >-->
+        <!--<input type="button" value="点击" v-on:click="f1"/ >-->
         <input type="button" value="祝福语" @click="f1"/ >    <!--绑定事件的简单写法-->   
     </div>
 
@@ -19,8 +24,8 @@
         var vm = new Vue({
             el: '#main',
             data: {
-                msg: '中国移动实习',
-                msg1: '祝各位领导身体健康',
+                msg: '感谢南宁移动给我这个实习机会，让我改变，让我成长，感谢各位领导、导师的栽培',
+                msg1: '祝各位领导身体健康，万事如意！！！！！                                     祝公司事业蒸蒸日上，更上一层楼！！！！！'
             },
             methods: {
                 f1: function () {
